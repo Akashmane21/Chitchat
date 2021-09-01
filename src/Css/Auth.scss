@@ -1,0 +1,58 @@
+.left_area {
+
+    background-color: #130707;
+
+  margin: 0px;
+  padding: 20px;
+
+  h1{
+      color: white;
+      letter-spacing: 2px;
+      padding-bottom: 50px;
+      font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+
+      font-size: 30px;
+  }
+}
+
+.right_area {
+  background-color: rgb(245, 245, 245);
+  
+background-size: 98%; 
+  margin: 0px;
+  padding: 20px;
+  
+  height: 100vh;
+  .box{
+    padding: 20px;
+    margin: 20%;
+    background-color: yellow;
+  }
+}
+
+// For Mobile View
+@media (max-width: 765px) {
+    .left_area {
+        height: 50vh;
+    
+      }
+}
+
+// For Desktop View
+@media (min-width: 765px) {
+  .main {
+    display: flex;
+  }
+  .left_area {
+    width: 25%;
+    height: 100vh;
+
+  }
+
+  .right_area {
+    width: 75%;
+    .box{
+      margin: 20%;
+    }
+  }
+}
