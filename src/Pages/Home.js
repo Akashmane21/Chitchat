@@ -40,11 +40,28 @@ export default function Home() {
     <div>
       <div className="menu">
         <h1>ChitCh@tz </h1>
-        <div className="imgdiv">
+        {/* <div className="imgdiv">
           <img src={Img} alt={UserName} />
-        </div>
-
-        <button onClick={logout}>
+        </div> */}
+<div className="log">
+<button onClick={logout}>
+       
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="22"
+            height="22"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="white"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="M15 3h6v18h-6M10 17l5-5-5-5M13.8 12H3" />
+          </svg>
+        </button>
+</div>
+        <button onClick={logout} className="hidden">
           Logout_
           <svg
             xmlns="http://www.w3.org/2000/svg"

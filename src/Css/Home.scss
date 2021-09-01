@@ -38,25 +38,15 @@
 .menu{
     background-color: #0d1117;
     display: flex;
-    justify-content: flex-end;
-    .imgdiv{
-        border-radius: 50%;
-        height: 70px;
-        width: 70px;
-        overflow: hidden;
-        display: flex;
-        justify-content: center;
-        img{
-            height: 70px;
-            width: auto;
-        }
-    }
+    justify-content: space-between;
+    align-items: center;
+ 
   
     h1{
         color: orangered;
         letter-spacing: 2px;
         font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-  padding: 6px;
+        padding: 6px;
         font-size: 30px;
     }
     button{
@@ -110,7 +100,7 @@ background-size: 98%;
 
 .Chatrooms{
     text-align: left;
-    padding: 20px;
+    padding: 25px;
     h2{
         color: white;
         word-spacing: 3px;
@@ -123,28 +113,31 @@ background-size: 98%;
     .left {
     //    display: none;
     margin: 0px;
+    height: 90vh;
     }
 
-    .Chatrooms{
-h2{
-    margin-left: 30px;
-}
-    }
+   
       .menu{
-        justify-content: space-between;
-        padding: 10px;
-        align-items: center;
+      
+    .hidden{
+        display: none;
+    }
+
+    .log{
         button{
-            display: none;
+            padding: 10px 20px;
+        }
+    }
+        h1{
+               font-size: 20px;
         }
 
-        h1{
-           width: 50%;
-           font-size: 20px;
-        }
+       
       }
 
-
+      .right {
+          display: none;
+      }
 }
 
 // For Desktop View
@@ -155,8 +148,8 @@ h2{
   }
   .menu {
     
-    img{
-        display: none;
+    .log{
+        display: none; 
     }
   }
   .left {
