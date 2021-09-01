@@ -1,10 +1,10 @@
 .chatbx{
     display: flex;
-    margin-bottom: 20px;
+    margin-bottom: 2px;
     justify-content: space-between;
     align-items: center;
-    border-radius: 10px;
     padding: 10px;
+    // padding-left: 20px;
     .imgdiv{
         border-radius: 50%;
         display: flex;
@@ -19,8 +19,9 @@
     }
 
     &:hover{
-        background-color: black;
+        background-color: #30363d;
         cursor: pointer;
+        border-left: 2px solid orangered;
     }
 
 

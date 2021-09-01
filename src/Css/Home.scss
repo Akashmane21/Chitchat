@@ -12,9 +12,8 @@
         }
     }
     
-    border-bottom: 2px solid green;
-    border-radius: 10px;
-    background-color: #2c2c2c6b;
+  
+    background-color: #30363d;
    padding: 10px;
    justify-content: space-between;
     
@@ -22,14 +21,10 @@
   
     .info{
       text-align: left;
-        h3{
-            color: rgb(255, 255, 255);
-            font-size: 20px;
-            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-        }
+      
       
         h4{
-            color: rgb(139, 139, 139);
+            color: rgb(241, 241, 241);
             font-size: 20px;
 
         }
@@ -180,3 +175,10 @@ background-size: 98%;
 
 }
 
+
+
+.menu{
+h1{
+    margin: 0px;
+}
+}
