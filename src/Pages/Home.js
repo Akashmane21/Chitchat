@@ -3,6 +3,7 @@ import { useHistory } from "react-router-dom";
 import "../Css/Home.scss";
 import { useCounter } from "../Context/CartContext";
 import firebase from "../DB/firebasedb";
+import Chatroom from "../Components/Chatrooms/Chatroom";
 
 export default function Home() {
   let history = useHistory();
@@ -98,6 +99,22 @@ export default function Home() {
               <h2>
               <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="orangered" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
               _Your Chat-rooms  </h2>
+
+<div className="Rooms">
+    <Chatroom Img="https://i1.wp.com/www.socialnews.xyz/wp-content/uploads/2020/09/07/Actress-Samantha-Akkineni-Latest-Stills-.jpg?quality=80&zoom=1&ssl=1" />
+    <Chatroom Img="https://i1.wp.com/www.socialnews.xyz/wp-content/uploads/2020/09/07/Actress-Samantha-Akkineni-Latest-Stills-.jpg?quality=80&zoom=1&ssl=1" />
+    <Chatroom Img="https://i1.wp.com/www.socialnews.xyz/wp-content/uploads/2020/09/07/Actress-Samantha-Akkineni-Latest-Stills-.jpg?quality=80&zoom=1&ssl=1" />
+    <Chatroom Img="https://i1.wp.com/www.socialnews.xyz/wp-content/uploads/2020/09/07/Actress-Samantha-Akkineni-Latest-Stills-.jpg?quality=80&zoom=1&ssl=1" />
+    <Chatroom Img="https://i1.wp.com/www.socialnews.xyz/wp-content/uploads/2020/09/07/Actress-Samantha-Akkineni-Latest-Stills-.jpg?quality=80&zoom=1&ssl=1" />
+    <Chatroom Img="https://i1.wp.com/www.socialnews.xyz/wp-content/uploads/2020/09/07/Actress-Samantha-Akkineni-Latest-Stills-.jpg?quality=80&zoom=1&ssl=1" />
+    <Chatroom Img="https://i1.wp.com/www.socialnews.xyz/wp-content/uploads/2020/09/07/Actress-Samantha-Akkineni-Latest-Stills-.jpg?quality=80&zoom=1&ssl=1" />
+    <Chatroom Img="https://i1.wp.com/www.socialnews.xyz/wp-content/uploads/2020/09/07/Actress-Samantha-Akkineni-Latest-Stills-.jpg?quality=80&zoom=1&ssl=1" />
+    <Chatroom Img="https://i1.wp.com/www.socialnews.xyz/wp-content/uploads/2020/09/07/Actress-Samantha-Akkineni-Latest-Stills-.jpg?quality=80&zoom=1&ssl=1" />
+    <Chatroom Img="https://i1.wp.com/www.socialnews.xyz/wp-content/uploads/2020/09/07/Actress-Samantha-Akkineni-Latest-Stills-.jpg?quality=80&zoom=1&ssl=1" />
+
+</div>
+
+
           </div>
         </div>
 

@@ -1,0 +1,41 @@
+.chatbx{
+    display: flex;
+    margin-bottom: 20px;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 10px;
+    padding: 10px;
+    .imgdiv{
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        height: 50px;
+        width: 50px;
+        overflow: hidden;
+        img{
+            height: 70px;
+            width: auto;
+        }
+    }
+
+    &:hover{
+        background-color: black;
+        cursor: pointer;
+    }
+
+
+    .Chat_info{
+        width: 70%;
+        overflow: hidden;
+        h5{
+            color: white;
+            font-size: 18px;
+        }
+        h6{
+            color: rgb(150, 150, 150);
+            font-size: 15px;
+            height: 20px;
+            overflow: hidden;
+        }
+    }
+}

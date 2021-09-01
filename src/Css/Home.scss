@@ -100,13 +100,20 @@ background-size: 98%;
 
 .Chatrooms{
     text-align: left;
-    padding: 25px;
+    padding: 15px;
+    // padding-top: 15px;
     h2{
         color: white;
+        
         word-spacing: 3px;
         font-size: 15px;
         text-transform: uppercase;
     }
+}
+
+.Rooms{
+    // padding: 20px;
+    margin-top: 20px;
 }
 // For Mobile View
 @media (max-width: 765px) {
@@ -114,6 +121,8 @@ background-size: 98%;
     //    display: none;
     margin: 0px;
     height: 90vh;
+    overflow-y: scroll;
+
     }
 
    
@@ -155,6 +164,8 @@ background-size: 98%;
   .left {
     width: 25%;
     height: 100vh;
+    overflow-y: scroll;
+
 
   }
 
