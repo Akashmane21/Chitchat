@@ -1,7 +1,8 @@
 
 .Auth_page{
     background-color: #ffffff;
-   
+    box-shadow: 0px 10px 30px -10px rgba(235, 235, 235, 0.849);
+
     // height: 100vh;
     h1{
         padding: 20px;
@@ -13,15 +14,36 @@
     }
 }
 
-
-.form{
-    background-color: rgb(255, 255, 255);
-    justify-content: flex-end;
-    padding: 40px;
+.formdata{
+    background-color: rgb(245, 245, 245);
+    padding: 20px;
     box-shadow: 0px 10px 30px -10px rgba(235, 235, 235, 0.849);
+// border: 1px solid rgb(124, 124, 124);
+border-radius: 20px;
+   
+
+}
+.form{
+    // background-color: rgb(250, 250, 250);
+    justify-content: flex-end;
+    padding: 20px;
     border-radius: 10px;
+h6{
+    color: red;
+}
+    img{
+        height: 100px;
+        width: auto;
+        border-radius: 50%;
+        
+        margin: 0px 35%;
+
+        &:hover{
+            cursor: pointer;
+        }
+    }
     input{
-        background-color: rgba(255, 255, 255, 0.979);
+        background-color: rgb(245, 245, 245);
         border-radius: 4px;
         padding: 5px;
         margin: 0px 0;
@@ -47,8 +69,8 @@
         border: 0px;
         width: 200px;
         font-size: 20px;
-        padding: 3px 0px;
-        border-radius: 7px;
+        padding: 6px 5px;
+        border-radius: 25px;
         border: 1px solid rgba(0, 0, 0, 0);
 
         outline: 0px;
@@ -109,6 +131,14 @@
         background-image: url("https://img.freepik.com/free-vector/professional-photographers-taking-picture-photo-mix-race-women-men-shooting-with-digital-dslr-camera-landscape-background-horizontal-banner_48369-27646.jpg?size=626&ext=jpg&ga=GA1.2.1623233742.1618704000");
       background-size: 40%;
     }
+    .formdata{
+        margin: 10px 20%;
+        align-items: center;
+        justify-content: center;
+        padding: 40px;
+     
+    
+    }
 }
 
 
@@ -120,5 +150,7 @@
         background-image: url("https://img.freepik.com/free-vector/professional-photographers-taking-picture-photo-mix-race-women-men-shooting-with-digital-dslr-camera-landscape-background-horizontal-banner_48369-27646.jpg?size=626&ext=jpg&ga=GA1.2.1623233742.1618704000");
       background-size: 100%;
     }
+
+  
 }
 

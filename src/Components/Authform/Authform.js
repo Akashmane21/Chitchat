@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState , useEffect } from "react";
 // import {NavLink} from 'react-router-dom'
 import { useHistory } from "react-router-dom";
 import firebase from '../../DB/firebasedb'
@@ -6,15 +6,28 @@ import "./Authform.scss";
 
 function Authform() {
   let history = useHistory();
-
+  var  ImgUrl ;
+  var file = [];
+  const [files, setfiles] = useState([])
+  const [isselect, setisselect] = useState(false)
   const [username, setusername] = useState("");
   const [password, setpassword] = useState("");
   const [Phone, setPhone] = useState(" ");
   const [isLogin, setisLogin] = useState(false);
   const [isuser, setisuser] = useState(false);
 
+useEffect(() => {
 
+  if(files.length=== 0){
+    console.log("Lenth is 0");
 
+  }
+  else{
+    console.log("image selected");
+
+  }
+         //   eslint-disable-next-line 
+}, [])
   function Login() {
     setisLogin(true);
   }
@@ -22,38 +35,122 @@ function Authform() {
     setisLogin(false);
   }
 
-  function Signup() {
+
+
+  
+  const Chooseimg = (e) => {
+    var input = document.createElement("input");
+    input.type = "file";
+    input.id = "fileInput"
+
+    input.onchange = (e) => {
+      file = e.target.files;
+     setfiles(file[0])
+
+      var reader = new FileReader();
+      reader.onload = function () {
+        document.getElementById("img").src = reader.result;
+      };
+      reader.readAsDataURL(file[0]);
+    };
+    input.click();
+  };
+
+
+
+
+
+
+
+
+
+  
+
+  const Upload = () => {
+console.log("clicked");
+
+    if(files.length=== 0){
+      setisselect(true)
+  
+    }
+    else{
+  
+  
     const name = username + "_" + password;
+    console.log(file[0]);
+console.log(files);
+
+    console.log(" upload clicked");
+    var uploadTask = firebase
+      .storage()
+      .ref("Image/" + username )
+      .put(files);
+    
+
+    uploadTask.on(
+      "state_changed",
+      function (snapshot) {
+        var progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+        document.getElementById("upprogress").innerHTML =
+          "Uploading" + progress + "%";
+      },
+
+      // --------Error Handling-------------------------------
+
+      function (err) {
+        alert("Error to Saving the Image");
+      },
+
+      // ------------Submit image into Database---------------
+      function () {
+        uploadTask.snapshot.ref.getDownloadURL().then(function (url) {
+            console.log(url);
+          ImgUrl = url;
+
 
     firebase
-      .database()
-      .ref(`Users/${name}/`)
-      .once("value", (snapshot) => {
-        if (snapshot.exists()) {
-          const email = snapshot.val();
-          console.log("exists!", email);
-        } else {
-          console.log("The User is Not exists");
-          firebase
-            .database()
-            .ref(`Users/${name}/Auth`)
-            .set({
-              Name: username,
-              Password: password,
-              Phone: Phone,
-            })
-            .then((res) => {
-              localStorage.setItem("authentication", "True");
-              localStorage.setItem("Userid", name);
-              localStorage.setItem("UserName", username);
+    .database()
+    .ref(`Users/${name}/`)
+    .once("value", (snapshot) => {
+      if (snapshot.exists()) {
+        const email = snapshot.val();
+        console.log("exists!", email);
+      } else {
+        console.log("The User is Not exists");
+        firebase
+          .database()
+          .ref(`Users/${name}/Auth`)
+          .set({
+            Name: username,
+            Password: password,
+            Phone: Phone,
+            
+            Link: ImgUrl,
 
-              history.push("/");
-              console.log("Account Created");
-              window.location.reload(false);
-            });
-        }
-      });
-  }
+          })
+          .then((res) => {
+            localStorage.setItem("auth", "True");
+            localStorage.setItem("id", name);
+            localStorage.setItem("Name", username);
+
+            history.push("/");
+            window.location.reload();
+
+          });
+      }
+    });
+    
+
+        });
+      }
+    );
+
+    }
+  };
+
+
+
+
 
   function Signin() {
     const name = username + "_" + password;
@@ -64,25 +161,16 @@ function Authform() {
       .ref(`Users/${name}/`)
       .once("value", (snapshot) => {
         if (snapshot.exists()) {
-          const email = snapshot.val();
-          console.log("exists!", email);
-          firebase
-            .database()
-            .ref(`Users/${name}/Auth`)
-            .set({
-              Name: username,
-              Password: password,
-              Phone: Phone,
-            })
-            .then((res) => {
-              localStorage.setItem("authentication", "True");
-              localStorage.setItem("Userid", name);
-              localStorage.setItem("UserName", username);
+        
+              localStorage.setItem("auth", "True");
+              localStorage.setItem("id", name);
+              localStorage.setItem("Name", username);
 
               history.push("/");
               console.log("Account Created");
-              window.location.reload(false);
-            });
+              window.location.reload();
+
+          
         } else {
           console.log("The User is Not exists");
           setisuser(true);
@@ -90,15 +178,21 @@ function Authform() {
       });
   }
 
+
+ 
+
   return (
     <div className="Auth_page">
       <div className="Auth">
     
           <div className="form">
-            {/* <h3 onClick={Login}>Welcome to Shoppie</h3> */}
             <div className="poster">
 
             </div>
+
+           
+
+            
             {isLogin ? (
               <center>
                 {" "}
@@ -115,6 +209,23 @@ function Authform() {
                 <h2>-- Sign up --</h2>
               </center>
             )}
+
+
+            <div className="formdata">
+            {isLogin ? ( " ") : ( 
+              <>
+              <img onClick={Chooseimg} src="https://icon-library.com/images/add-person-icon/add-person-icon-17.jpg" id="img" alt="" />
+
+{isselect ? ( 
+<h6>* Please Select The Image</h6>
+
+) : ( " ")}
+</>
+            ) }
+             <label id="upprogress"></label>
+
+
+
 
             <h2>Name : </h2>
             <svg
@@ -193,11 +304,12 @@ function Authform() {
             )}
 
             {isLogin ? (
-              <button onClick={Signin} type="submit" className="register">
+              <button onClick={Signin}  className="register">
                 Login
               </button>
             ) : (
-              <button onClick={Signup} type="submit" className="register">
+              
+              <button onClick={Upload} className="register">
                 Register
               </button>
             )}
@@ -213,7 +325,7 @@ function Authform() {
                 Already Have a Account ? <span onClick={Login}>Login</span>
               </h6>
             )}
-            {/* <button onClick={Submit} className="login">Login</button> */}
+            </div>
           </div>
         {/* </Fade> */}
       </div>

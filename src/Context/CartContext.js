@@ -5,18 +5,18 @@ const Globaldata = createContext();
 export const useCounter = () => useContext(Globaldata);
 
 function GlobaldataProider(props) {
-  const [Desdata, setDesdata] = useState([]);
 
-  const Username = localStorage.getItem("UserName");
+  const Username = localStorage.getItem("Name");
   // eslint-disable-next-line
   const [UserName, setUserName] = useState(Username);
 
-  const userid = localStorage.getItem("Userid");
+  const userid = localStorage.getItem("id");
   // eslint-disable-next-line
   const [UserId, setUserId] = useState(userid);
-  const [cat, setcat] = useState("");
 
-  const value = { UserId, Desdata, setDesdata, UserName, cat, setcat };
+
+
+  const value = { UserId, UserName};
 
   return (
     <Globaldata.Provider value={value}>{props.children}</Globaldata.Provider>
