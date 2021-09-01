@@ -4,7 +4,7 @@
     justify-content: space-between;
     align-items: center;
     padding: 10px;
-    // padding-left: 20px;
+    padding-left: 20px;
     .imgdiv{
         border-radius: 50%;
         display: flex;
@@ -21,7 +21,7 @@
     &:hover{
         background-color: #30363d;
         cursor: pointer;
-        border-left: 2px solid orangered;
+        border-left: 4px solid orangered;
     }
 
 
