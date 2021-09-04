@@ -37,7 +37,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    box-shadow: 0px 10px 30px -10px black;
+    box-shadow: 30px 40px 30px 10px black;
  
   
     h1{
@@ -47,21 +47,24 @@
         padding: 6px;
         font-size: 30px;
     }
+
+    .btns{
+      margin-left: auto;
+
+    }
     button{
-       margin-left: auto;
        background-color: orangered;
        border: 0px;
        padding: 10px 20px;
+       margin: 10px;
+       border-radius: 40px;
        color: white;
-       border-radius: 0px;
-       border: 1px solid orangered;
 
 
        &:hover{
            cursor: pointer;
-           background-color: #1b1a1a;
-           border: 1px solid orangered;
-           color: orangered;
+          box-shadow: 0px 10px 20px -10px black;
+           color: rgb(0, 255, 21);
        }
     }
 }
@@ -69,7 +72,7 @@
 
 .left {
 
-    background-color: #191a1e;
+    background-color: #1b1f23;
 text-align: center;
   margin: 0px;
 //   padding: 20px;
@@ -80,7 +83,7 @@ text-align: center;
 
 .right {
   background-color: #000000;
-  background-color: rgb(224, 224, 224);
+  background-color: #0d1117;
   
 background-size: 98%; 
   margin: 0px;
@@ -102,8 +105,8 @@ background-size: 98%;
     // padding: 15px;
     // padding-top: 15px;
     h2{
-        color: white;
-            padding: 20px;
+        color: gray;
+            padding: 20px 10px 0px 20px ;
 
         word-spacing: 3px;
         font-size: 15px;
@@ -112,7 +115,7 @@ background-size: 98%;
 }
 
 .Rooms{
-    margin-top: 20px;
+    // margin-top: 20px;
 }
 // For Mobile View
 @media (max-width: 765px) {
@@ -185,4 +188,150 @@ background-size: 98%;
 h1{
     margin: 0px;
 }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  // width: 100%; /* Full width */
+  // height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(151, 148, 148); /* Fallback color */
+  background-color: rgba(112, 112, 112, 0.4); /* Black w/ opacity */
+}
+
+.modal-content {
+  background-color: #ffffff;
+  margin: auto;
+  padding: 20px;
+  // border: 1px solid #888;
+  width: 80%;
+  text-align: left;
+  align-items: left;
+}
+
+.modal-content >h5{
+color: rgb(0, 238, 255);
+text-transform: uppercase;
+margin-top: 20px;
+}
+
+.modal-content >h6{
+  color: rgb(16, 153, 23);
+  text-transform: uppercase;
+  margin-top: 20px;
+  }
+  .modal-content>h1{
+      font-family: Bioweapon , sans-serif;
+      color: rgb(212, 0, 255);
+      font-size: 22px;
+  }
+
+
+p{
+    color: rgb(255, 251, 251);
+}
+.close {
+  color: #fd0000;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  /* background-color: rgba(255, 0, 0, 0.212); */
+  border-radius: 10px;
+  margin-bottom: 20px;
+  text-align: right;
+  align-items: right;
+  padding-right: 20px;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+
+
+
+@media (max-width: 768px) {
+
+  .Tech_area{
+      display: block;
+      margin: 10px;
+   }
+
+
+  .Tech_box{
+      margin: 20px;
+  }
+
+
+  .Tech_box >img{
+      height: 200px;
+      width: 100%;
+      display: flex;
+      border-radius: 5px;
+  }
+
+  .Tech_title {
+      font-size: 20px;
+      margin-bottom: 40px;
+  }
+  .modal-content >img{
+      height: 200px;
+      border-radius: 5px;
+  }
+  .modal-content>h1{
+      font-size: 16px;
+  }
+
+  
+.modal-content {
+  margin: 10px;
+width: 95%;
+}
+}
+
+
+.bigbtn> button{
+
+  background-color: transparent;
+  border-width: 0px;
+  
+
 }

@@ -5,6 +5,7 @@ const Globaldata = createContext();
 export const useCounter = () => useContext(Globaldata);
 
 function GlobaldataProider(props) {
+  const [Roomdata, setRoomdata] = useState([]);
 
   const Username = localStorage.getItem("Name");
   // eslint-disable-next-line
@@ -16,7 +17,7 @@ function GlobaldataProider(props) {
 
 
 
-  const value = { UserId, UserName};
+  const value = { UserId, UserName , Roomdata, setRoomdata};
 
   return (
     <Globaldata.Provider value={value}>{props.children}</Globaldata.Provider>

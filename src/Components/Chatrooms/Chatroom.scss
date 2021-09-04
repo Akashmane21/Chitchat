@@ -1,27 +1,61 @@
-.chatbx{
+.flex{
     display: flex;
+}
+.chatbx{
+    // display: flex;
     margin-bottom: 2px;
     justify-content: space-between;
     align-items: center;
+    background-color: #2c2b2b;
+    border-left: 4px solid #ebebeb;
+
     padding: 10px;
     padding-left: 20px;
-    .imgdiv{
+
+    
+  background: linear-gradient(to right, rgb(43, 12, 46) 50%, #2c2b2b 50%);
+  background-size: 200% 100%;
+  background-position: right bottom;
+  transition: all .5s ease-out;
+
+  &:hover {
+    background-position: left bottom;
+  }
+  
+.members{
+    h6{
+        color: rgb(243, 149, 149);
+    }
+    img{
+        height: 35px;
+        width: auto;
         border-radius: 50%;
+    }
+}
+ 
+    .imgdiv{
+        border-radius: 10px;
         display: flex;
         justify-content: center;
-        height: 50px;
-        width: 50px;
+        height: 60px;
+        width: 65px;
+        margin: 10px 0px;
+        margin-right: 10px;
+        border: 1px solid rgb(18, 127, 146);
         overflow: hidden;
         img{
-            height: 70px;
+            height: 60px;
             width: auto;
         }
     }
 
     &:hover{
-        background-color: #30363d;
         cursor: pointer;
         border-left: 4px solid orangered;
+
+        .overlay{
+            width: 100%;
+        }
     }
 
 
@@ -29,14 +63,27 @@
         width: 70%;
         overflow: hidden;
         h5{
-            color: white;
-            font-size: 18px;
+            color: rgb(255, 123, 0);
+            font-size: 22px;
         }
         h6{
-            color: rgb(150, 150, 150);
+            color: rgb(133, 133, 133);
             font-size: 15px;
             height: 20px;
             overflow: hidden;
         }
+
+    
+    }
+
+    .date{
+        text-align: right;
+        color: gray;
+
+        h6{
+            font-size: 9px;
+        }
+
     }
 }
+

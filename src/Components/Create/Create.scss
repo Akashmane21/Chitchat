@@ -1,0 +1,77 @@
+.Create{
+    text-align: center;
+    margin: 10px 30%;
+    background-color: aliceblue;
+    border-radius: 10px;
+    img{
+        height: 100px;
+        width: auto;
+    }
+
+    button{
+        width: 100%;
+        height: 100%;
+        border-radius: 0px;
+        margin: 0px;
+        background-color: rgb(14, 143, 255);
+
+        &:hover{
+            box-shadow: none;
+            background-color: white;
+            border: 0px;
+            color: orangered;
+        }
+    }
+
+    .Create_form{
+        text-align: left;
+        padding: 20px;
+
+        input{
+            background-color: aliceblue;
+            border: 0px;
+            outline: 0px;
+            margin-bottom: 20px;
+            margin-left: 10px;
+        }
+
+        h2{
+            font-size: 20px;
+
+        }
+    }
+}
+
+.Create_Join{
+    display: flex;
+    // flex-direction: column;
+    margin-top: 20px;
+    justify-content: center;
+    text-align: center;
+    button{
+        background-color: white;
+        border: 0px;
+        outline: 0px;
+        border-radius: 10px;
+        margin: 10px;
+        width: 200px;
+        padding: 10px 10px;
+        transition: 0.5s;
+ 
+        background: linear-gradient(to left, rgb(255, 255, 255) 50%, rgb(234, 0, 255) 50%);
+        background-size: 200% 100%;
+        background-position: right bottom;
+        transition: all .5s ease-out;
+      
+        &:hover {
+          background-position: left bottom;
+                      transform: scale(1.1);
+
+        }
+        
+        // &:hover{
+        //     background-color: rgb(234, 0, 255);
+        //     color: white;
+        // }
+    }
+}

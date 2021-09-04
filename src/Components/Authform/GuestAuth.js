@@ -1,11 +1,9 @@
 import React, { useState , useEffect } from "react";
 // import {NavLink} from 'react-router-dom'
-import { useHistory } from "react-router-dom";
 import firebase from '../../DB/firebasedb'
 import "./Authform.scss";
 
-function Authform() {
-  let history = useHistory();
+function GuestAuth() {
   var  ImgUrl ;
   var file = [];
   const [files, setfiles] = useState([])
@@ -133,8 +131,8 @@ console.log(files);
             localStorage.setItem("id", name);
             localStorage.setItem("Name", username);
 
-            history.push("/");
-            window.location.reload();
+            window.history.back();
+
 
           });
       }
@@ -166,9 +164,8 @@ console.log(files);
               localStorage.setItem("id", name);
               localStorage.setItem("Name", username);
 
-              history.push("/");
+              window.history.back();
               console.log("Account Created");
-              window.location.reload();
 
           
         } else {
@@ -333,4 +330,4 @@ console.log(files);
   );
 }
 
-export default Authform;
+export default GuestAuth;

@@ -41,20 +41,20 @@
 
 /* width */
 ::-webkit-scrollbar {
-  width: 10px;
+  width: 5px;
 }
 
 /* Track */
 ::-webkit-scrollbar-track {
   box-shadow: inset 0 0 5px rgba(29, 25, 78, 0); 
-  background-color: #0a192f;
+  background-color: #64055f;
 
 }
  
 /* Handle */
 ::-webkit-scrollbar-thumb {
   background: rgb(4, 197, 240); 
-  border-radius: 10px;
+  border-radius: 0px;
 }
 
 /* Handle on hover */
