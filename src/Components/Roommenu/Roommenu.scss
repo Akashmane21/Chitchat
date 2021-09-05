@@ -1,0 +1,95 @@
+.roommenu{
+    display: flex;
+    padding: 10px;
+    align-items: center;
+    background: #30363d;
+    color: white;
+
+    .roominfo{
+        h1{
+            font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            font-size: 25px;
+        }
+        .Members{
+            display: flex;
+            h6{
+                font-size: 15px;
+                color: gray;
+                margin: 0px 4px;
+
+            }
+        }
+    }
+
+    .imgdiv{
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        height: 60px;
+        width: 65px;
+        margin: 10px 0px;
+        margin-right: 10px;
+        overflow: hidden;
+        img{
+            height: 60px;
+            width: auto;
+        }
+    }
+
+    .roombtns{
+        margin-left: auto;
+        button{
+            background-color: orangered;
+            border: 0px;
+            padding: 10px 20px;
+            margin: 10px;
+            border-radius: 40px;
+            color: white;
+            background: linear-gradient(to left, rgb(253, 0, 0) 50%, rgb(234, 0, 255) 50%);
+            background-size: 200% 100%;
+            background-position: right bottom;
+            transition: all .5s ease-out;
+            margin-left: 30px;
+          
+            &:hover {
+              background-position: left bottom;
+                          transform: scale(1.1);
+    
+            }
+     
+           
+         }
+
+    }
+
+
+}
+
+
+// For Mobile View
+@media (max-width: 765px) {
+    .roombtns{
+        width: 25%;
+
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        button{
+            display: none;
+        }
+       
+    }
+    .Members{
+       width: 100px;
+      
+    }
+}
+
+@media (min-width: 765px) {
+    .roombtns{
+       
+        .dots{
+            display: none;
+        }
+    }
+}

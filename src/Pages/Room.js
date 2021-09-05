@@ -3,43 +3,45 @@ import '../Css/Room.scss'
 import {useParams} from 'react-router-dom'
 import { useHistory } from "react-router-dom";
 import firebase from "../DB/firebasedb";
+import Roommenu from '../Components/Roommenu/Roommenu';
 
 
 export default function Room() {
     let history = useHistory();
     const { name } =useParams();
+    // eslint-disable-next-line
     const [Data, setData] = useState([ ])
-    const [Sharelink, setSharelink] = useState('')
 
     useEffect(() => {
+        if (localStorage.getItem("auth") == null) {
+            history.push("/GuestAuth");
+          }
+
         firebase.database()
-        .ref(`Chitchatz/Rooms/${name}/Admin`)
+        .ref(`Chitchatz/Rooms/${name}/Members`)
         .on("value", (snapshot) => {
           const todos = snapshot.val();
-          setData(todos)
-          setSharelink(`http://localhost:3000/isChatRoom/${todos.Roomname}`)
+          const Products_List = [];
+  
+          for (let id in todos) {
+            Products_List.push({ ...todos[id] });
+          }
+          setData(Products_List);
+          console.log(Products_List);
          
         });
-    }, [name])
+        // eslint-disable-next-line
+    }, [])
 
-    function Share(){
-        navigator.clipboard.writeText(Sharelink);
-        alert("Copied")
+   
 
-    }
 
-    function Home(){
-
-        history.push(`/`);
-
-}
   
     return (
-        <div>
-            <h1>{Data.Roomname}</h1>
+        <div className="room">
+        <Roommenu   />
+           
 
-            <h1 onClick={Share}>{Sharelink}</h1>
-            <h1 onClick={Home}>Home</h1>
 
         </div>
     )
