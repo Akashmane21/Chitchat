@@ -19,7 +19,6 @@ export default function Roommenu() {
       .on("value", (snapshot) => {
         const todos = snapshot.val();
         setdata(todos);
-        console.log(todos);
         setSharelink(`http://localhost:3000/isChatRoom/${todos.Roomname}`);
       });
 
@@ -34,7 +33,6 @@ export default function Roommenu() {
           Products_List.push({ ...todos[id] });
         }
         setMembers(Products_List);
-        console.log(Products_List);
       });
   }, [name]);
   function Goback(){
@@ -67,7 +65,9 @@ export default function Roommenu() {
         <button>Leave_
         <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v18h-6M10 17l5-5-5-5M13.8 12H3"/></svg>
         </button>
-
+        <div className="dots">
+        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+        </div>
         <div className="dots">
         <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="1"></circle><circle cx="12" cy="5" r="1"></circle><circle cx="12" cy="19" r="1"></circle></svg>
         </div>
