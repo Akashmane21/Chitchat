@@ -9,7 +9,6 @@
             height: 80vh;
 
             background-color: #1b1f23;
-            margin: 10px;
             
             display: flex;
             flex-direction: column;
@@ -135,6 +134,7 @@
     .Chatbox{
 
         width: 100%;
+        margin: 0px;
     }
     .send{
         
@@ -148,7 +148,7 @@
 @media (min-width: 765px) {
 
     .Chatbox{
-
+        margin: 10px;
         width: 70%;
     }
     .send{
