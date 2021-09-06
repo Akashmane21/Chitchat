@@ -56,6 +56,8 @@ export default function Home() {
         <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="orangered" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
         </h1>
         <div className="log">
+        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 24 24" fill="none" stroke="orangered" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="1"></circle><circle cx="12" cy="5" r="1"></circle><circle cx="12" cy="19" r="1"></circle></svg>
+
           <button onClick={logout}>
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -63,7 +65,7 @@ export default function Home() {
               height="22"
               viewBox="0 0 24 24"
               fill="none"
-              stroke="white"
+              stroke="red"
               stroke-width="2"
               stroke-linecap="round"
               stroke-linejoin="round"
@@ -71,6 +73,7 @@ export default function Home() {
               <path d="M15 3h6v18h-6M10 17l5-5-5-5M13.8 12H3" />
             </svg>
           </button>
+
         </div>
 
         <div className="btns">

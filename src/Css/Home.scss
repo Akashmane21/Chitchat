@@ -118,6 +118,12 @@ background-size: 98%;
 
 .log{
   margin-left: auto;
+  position: relative;
+  left: 60px;
+  button{
+    border-radius: 10px;
+    background-color: #fff;
+  }
 
 }
 
