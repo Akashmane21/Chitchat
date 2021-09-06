@@ -6,6 +6,7 @@ import Chat from "./Pages/Chat";
 import Auth from "./Pages/Auth";
 import Room from "./Pages/Room";
 import GuestAuth from "./Components/Authform/GuestAuth";
+import Block from "./Components/Block/Block";
 
 function App() {
   return (
@@ -19,6 +20,8 @@ function App() {
 
           <Route exact path="/Auth" component={Auth} />
           <Route exact path="/GuestAuth" component={GuestAuth} />
+          <Route exact path="/Create" component={Block} />
+
 
         </Switch>
       </BrowserRouter>

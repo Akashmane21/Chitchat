@@ -119,12 +119,23 @@ background-size: 98%;
 .log{
   margin-left: auto;
   position: relative;
-  left: 30px;
+  display: flex;
+  // left: 30px;
   button{
     border-radius: 10px;
     background-color: rgb(221, 221, 221);
   }
 
+}
+
+.Add{
+   background-color: rgb(255, 123, 0);
+   position: fixed;
+   padding: 10px;
+   border-radius: 50%;
+   bottom: 0;
+   right: 0;
+   margin: 30px;
 }
 
 .Rooms{

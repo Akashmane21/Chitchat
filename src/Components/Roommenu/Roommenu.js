@@ -4,6 +4,8 @@ import { useParams } from "react-router-dom";
 import { useHistory } from "react-router-dom";
 import firebase from "../../DB/firebasedb";
 import '../../Css/Room.scss'
+import Zoom from 'react-reveal/Zoom';
+
 export default function Roommenu() {
   let history = useHistory();
   const [data, setdata] = useState([]);
@@ -107,6 +109,7 @@ export default function Roommenu() {
         </div>
       </div>
 
+     
 
       <div id="join" class="modal">
         <div class="modal-content" id="mem">
@@ -122,6 +125,8 @@ export default function Roommenu() {
 
           
                 {Admin===`${member.Name}` ? ( <h1>Admin</h1> ) : ( "")}
+                <Zoom left>
+
             <div className="Memberblock">
             
             <div className="imgdiv">
@@ -133,13 +138,14 @@ export default function Roommenu() {
             <h2>{member.Phone}</h2>
                 </div>
             </div>
+            </Zoom>
+
             </div>
        </>
             ) : " "}
-
         </div>
+        
       </div>
-
 
 
 

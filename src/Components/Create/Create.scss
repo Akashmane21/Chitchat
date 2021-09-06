@@ -44,9 +44,11 @@
 
 .Create_Join{
     display: flex;
-    // flex-direction: column;
+    flex-direction: row;
+    flex-wrap: wrap;
     margin-top: 20px;
     justify-content: center;
+    align-items: center;
     text-align: center;
     button{
         background-color: white;

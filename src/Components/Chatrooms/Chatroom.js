@@ -8,6 +8,7 @@ import { useHistory } from "react-router-dom";
 export default function Chatroom({Rooms}) {
     let history = useHistory();
     // const { Roomdata, setRoomdata } = useCounter();
+    const [Lastmsg, setLastmsg] = useState([])
     const [Members, setMembers] = useState([])
 
     const [Room, setRoom] = useState([])
@@ -31,11 +32,27 @@ export default function Chatroom({Rooms}) {
             Products_List.push({ ...todos[id] });
           }
           setMembers(Products_List)
-
-
-    
-         
+   
         });
+
+        firebase
+      .database()
+      .ref(`Chitchatz/Rooms/${Rooms.RoomName}/Messages`)
+      .on("value", (snapshot) => {
+        const todos = snapshot.val();
+        const Products_List = [];
+
+        for (let id in todos) {
+          Products_List.push({ ...todos[id] });
+        }
+        const lastmsg = Products_List.reverse()
+        lastmsg.length=1
+        setLastmsg(lastmsg)
+
+      });
+
+
+
       }, [Rooms.RoomName]);
 
 
@@ -72,8 +89,12 @@ export default function Chatroom({Rooms}) {
 
             <div className="Chat_info">
                 <h5>{Room.Roomname}</h5>
+                {Lastmsg
+                ? Lastmsg.map((msg, index) => (
+                  <h6>{msg.Message}</h6>
 
-                <h6>This is last msg...</h6>
+                  ))
+                : " "}
             </div>
             <div className="date">
                 <h6>{Room.Date}</h6>
