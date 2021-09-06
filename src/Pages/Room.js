@@ -112,7 +112,7 @@ export default function Room() {
     .ref(`Chitchatz/Rooms/${name}/Messages`)
     .push(Msg);
 
-    document.getElementById("msg").value=" ";
+    document.getElementById("msg").value="";
     
  
     var myDiv = document.getElementById("msgs");

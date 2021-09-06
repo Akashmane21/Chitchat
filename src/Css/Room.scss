@@ -22,8 +22,10 @@
             .send{
                 align-items: center;
                 background-color: gray;
+                margin: 0px;
 
                 margin-top: auto;
+
                 input{
                     
                     font-size: 18px;
@@ -144,7 +146,9 @@
         margin: 0px;
     }
     .send{
-        
+        position: fixed;
+        width: 100%;
+        bottom: 0;
         input{
             width:80%;
         }
@@ -177,3 +181,4 @@
     }
 
 }
+
