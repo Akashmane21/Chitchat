@@ -1,6 +1,6 @@
 .profile{
     display: flex;
-
+    color: rgb(240, 240, 240);
     .imgdiv{
         border-radius: 50%;
         height: 70px;
@@ -27,7 +27,6 @@
       
       
         h4{
-            color: rgb(241, 241, 241);
             font-size: 20px;
 
         }
@@ -145,6 +144,10 @@ background-size: 98%;
 }
 // For Mobile View
 @media (max-width: 765px) {
+  .profile{
+  background-color: rgb(194, 194, 194);
+  color: black;
+  }
     .left {
     //    display: none;
     margin: 0px;
