@@ -5,8 +5,12 @@ import { useHistory } from "react-router-dom";
 import firebase from "../../DB/firebasedb";
 import '../../Css/Room.scss'
 import Zoom from 'react-reveal/Zoom';
+// import Bounce from 'react-reveal/Bounce';
+import { useCounter } from "../../Context/CartContext";
 
 export default function Roommenu() {
+  const { UserId } = useCounter();
+
   let history = useHistory();
   const [data, setdata] = useState([]);
     //  eslint-disable-next-line 
@@ -79,8 +83,30 @@ export default function Roommenu() {
   function onclose() {
     var mode = document.getElementById("join");
     mode.style.display = "none";
+    var modal = document.getElementById("delete");
+  modal.style.display = "none";
   }
 
+function Leave(){
+
+  var modal = document.getElementById("delete");
+  modal.style.display = "block";
+}
+
+
+function LeaveRoom(){
+  const id = localStorage.getItem("roomid")
+ 
+  firebase
+  .database()
+  .ref(`Chitchatz/Users/${UserId}/Rooms`)
+  .child(id)
+ .remove();
+
+ history.push(`/`);
+
+
+}
 
   return (
     <div className="roommenu">
@@ -106,16 +132,16 @@ export default function Roommenu() {
       
         <svg onClick={Share} xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="gray" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"></circle><circle cx="6" cy="12" r="3"></circle><circle cx="18" cy="19" r="3"></circle><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line></svg>
       
-        <button>Leave_
+        <button onClick={LeaveRoom}>Leave_
         <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v18h-6M10 17l5-5-5-5M13.8 12H3"/></svg>
         </button>
         <div className="dots">
         <i onClick={Friends} class="fas fa-user-friends"></i>
         {/* <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg> */}
         </div>
-        <div className="dots">
-        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 24 24" fill="none" stroke="gray" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="1"></circle><circle cx="12" cy="5" r="1"></circle><circle cx="12" cy="19" r="1"></circle></svg>
-        </div>
+        <div className="dots" onClick={Leave}>
+        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 24 24" fill="none" stroke="orangered" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path><line x1="10" y1="11" x2="10" y2="17"></line><line x1="14" y1="11" x2="14" y2="17"></line></svg>
+          </div>
       </div>
 
      
@@ -157,6 +183,24 @@ export default function Roommenu() {
       </div>
 
 
+      <div id="delete" class="modal">
+        <div class="modal-content">
+          <span onClick={onclose} class="close">
+            {" "}
+            &times;
+          </span>
+          <div className="leave">
+
+          <h1>Are you Sure ?</h1>
+          <button onClick={LeaveRoom}>Leave_
+        <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v18h-6M10 17l5-5-5-5M13.8 12H3"/></svg>
+        </button>
+        
+
+        <h3>* You will be no longer part of this ChatRoom </h3>
+</div>
+        </div>
+      </div>
 
 
 

@@ -11,6 +11,7 @@ export default function Chatroom({Rooms}) {
     const [Lastmsg, setLastmsg] = useState([])
     const [Members, setMembers] = useState([])
     const [moremem, setmoremem] = useState("")
+    console.log(Rooms.id);
 
     const [Room, setRoom] = useState([])
     useEffect(() => {
@@ -87,6 +88,7 @@ export default function Chatroom({Rooms}) {
         const room = Room.Roomname + "_" + Room.Password;
 
         history.push(`/ChatRoom/${room}`);
+        localStorage.setItem("roomid" , Rooms.id)
 
       }
     return (

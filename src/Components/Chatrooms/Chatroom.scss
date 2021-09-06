@@ -10,23 +10,24 @@
 
     padding: 10px;
     padding-left: 20px;
-
+margin: 10px;
+border-radius: 10px;
     
-  background: linear-gradient(to right, rgb(43, 12, 46) 50%, #130d0d00 50%);
+  background: linear-gradient(to right, rgb(43, 12, 46) 50%, #0d1117 50%);
   background-size: 200% 100%;
   background-position: right bottom;
   transition: all .5s ease-out;
 //   border: 1px solid rgb(139, 139, 139);
-  border-left: 4px solid #ebebeb00;
+  border-left: 1px solid #c0c0c000;
 
-
+backdrop-filter: blur(1.5);
   &:hover {
     background-position:  bottom  left;
   }
   
 .members{
     h6{
-        color: rgb(243, 149, 149);
+        color: rgb(104, 103, 103);
     }
     img{
         height: 35px;
@@ -80,10 +81,13 @@
 
     .date{
         text-align: right;
+        justify-content: flex-end;
+        display: flex;
         color: gray;
 
         h6{
             font-size: 9px;
+            margin-left: 4px;
         }
 
     }
