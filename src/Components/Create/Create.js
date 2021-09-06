@@ -217,6 +217,7 @@ setisuser(true)
 
 
   function Create() {
+    setisJoin(false)
     var modal = document.getElementById("myModal");
     modal.style.display = "block";
   }

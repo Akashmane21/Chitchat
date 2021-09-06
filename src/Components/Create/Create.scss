@@ -1,6 +1,5 @@
 .Create{
     text-align: center;
-    margin: 10px 30%;
     background-color: aliceblue;
     border-radius: 10px;
     img{
@@ -75,5 +74,20 @@
         //     background-color: rgb(234, 0, 255);
         //     color: white;
         // }
+    }
+}
+
+
+// For Mobile View
+@media (max-width: 765px) {
+
+}
+
+
+
+// For Desktop View
+@media (min-width: 765px) {
+    .Create{
+        margin: 10px 30%;
     }
 }
