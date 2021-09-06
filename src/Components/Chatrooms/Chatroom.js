@@ -10,6 +10,7 @@ export default function Chatroom({Rooms}) {
     // const { Roomdata, setRoomdata } = useCounter();
     const [Lastmsg, setLastmsg] = useState([])
     const [Members, setMembers] = useState([])
+    const [moremem, setmoremem] = useState("")
 
     const [Room, setRoom] = useState([])
     useEffect(() => {
@@ -18,7 +19,6 @@ export default function Chatroom({Rooms}) {
         .on("value", (snapshot) => {
           const todos = snapshot.val(); 
           setRoom(todos)
-          console.log(todos);
          
         });
         firebase.database()
@@ -31,7 +31,33 @@ export default function Chatroom({Rooms}) {
           for (let id in todos) {
             Products_List.push({ ...todos[id] });
           }
-          setMembers(Products_List)
+      
+          const lastmsg = Products_List.reverse()
+          lastmsg.length=3
+          setMembers(lastmsg)
+         
+   
+        });
+
+
+        firebase.database()
+        .ref(`Chitchatz/Rooms/${Rooms.RoomName}/Members`)
+        .on("value", (snapshot) => {
+          const Products_List = [];
+          const todos = snapshot.val(); 
+       
+    
+          for (let id in todos) {
+            Products_List.push({ ...todos[id] });
+          }
+          var memlength = Products_List.length
+          if(memlength>3){
+           
+            setmoremem(`${memlength-3}+`)
+          }
+          else{
+            setmoremem('')
+          }
    
         });
 
@@ -47,7 +73,8 @@ export default function Chatroom({Rooms}) {
         }
         const lastmsg = Products_List.reverse()
         lastmsg.length=1
-        setLastmsg(lastmsg)
+        console.log(lastmsg);
+        setLastmsg(lastmsg[0])
 
       });
 
@@ -78,27 +105,33 @@ export default function Chatroom({Rooms}) {
 
             <div className="members">
             <h6>Members</h6>
+            <div className="memberno">
+
+          
                 {Members
                 ? Members.map((member, index) => (
+                  <>
                     <img src={member.DPLink} alt=" " />
+
+                    </>
                   ))
                 : " "}
+                <div className="mem">
 
+                <h6>{moremem}</h6>
+                </div>
+                </div>
                 </div>
                 </div>
 
             <div className="Chat_info">
                 <h5>{Room.Roomname}</h5>
-                {Lastmsg
-                ? Lastmsg.map((msg, index) => (
-                  <h6>{msg.Message}</h6>
+                  <h6>{Lastmsg.Message}</h6>
 
-                  ))
-                : " "}
             </div>
             <div className="date">
-                <h6>{Room.Date}</h6>
-                <h6>{Room.Time}</h6>
+                <h6>{Lastmsg.date}</h6>
+                <h6>{Lastmsg.Time}</h6>
 
             </div>
             </div>

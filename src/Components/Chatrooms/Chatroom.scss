@@ -89,3 +89,18 @@
     }
 }
 
+.memberno{
+    display: flex;
+    color: black;
+
+    .mem{
+        padding: 10px;
+        // background-color: rgb(138, 138, 138);
+        border-radius: 50%;
+        h6{
+            
+            
+            color: rgb(131, 127, 127);
+        }
+    }
+}
