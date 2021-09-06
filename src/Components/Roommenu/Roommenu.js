@@ -70,7 +70,7 @@ export default function Roommenu() {
   function Share(){
     const shareData = {
       title: 'Chitchatz',
-      text: `Join Chat Room⚡ on Chitchatz , just Register or Login & Enter Password ---------🔑:- ${data.Password}--------- Click on the Below Link👇`,
+      text: `Join Chat Room⚡ on Chitchatz , just Enter Password ---------🔑:- ${data.Password}--------- Click on the Below Link👇`,
       url: `https://chitchatz.netlify.app/ChatRoomauth/${data.Roomname}`
     }
     // console.log(shareData);
