@@ -65,6 +65,56 @@
 
 }
 
+#mem{
+    background-color: #0d1117;
+    
+    h1{
+        color: orangered;
+        font-size: 25px;
+        text-transform: uppercase;
+    }
+    .Admin{
+        background-color: #12161d;
+        padding: 10px;
+        margin: 10px;
+       
+        margin-left: 0px;
+        h1{
+            color: green;
+            font-size: 15px;
+        }
+        
+        &:hover{
+            cursor: pointer;
+            // transform: scale(1.1);
+            box-shadow: 0px 6px 20px -10px rgb(6, 69, 88);
+
+        }
+    }
+
+
+
+    .Memberblock{
+        display: flex;
+        
+        border-radius: 10px;
+        align-items: center;
+        .mem_info{
+            padding-left: 10px;
+            h6{
+                font-size: 20px;
+                color: white;
+            }
+
+            h2{
+                font-size: 13px;
+                color: gray;
+            }
+        }
+
+    }
+}
+
 .dots{
     i{
         font-size: 20px;

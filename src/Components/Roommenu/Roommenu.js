@@ -3,12 +3,14 @@ import "./Roommenu.scss";
 import { useParams } from "react-router-dom";
 import { useHistory } from "react-router-dom";
 import firebase from "../../DB/firebasedb";
-
+import '../../Css/Room.scss'
 export default function Roommenu() {
   let history = useHistory();
   const [data, setdata] = useState([]);
     //  eslint-disable-next-line 
   const [Sharelink, setSharelink] = useState("");
+  const [Admin, setAdmin] = useState('')
+  const [Data, setData] = useState([])
   const [Members, setMembers] = useState([]);
   const { name } = useParams();
 
@@ -19,6 +21,8 @@ export default function Roommenu() {
       .on("value", (snapshot) => {
         const todos = snapshot.val();
         setdata(todos);
+        setAdmin(todos.Name);
+
         setSharelink(`http://localhost:3000/isChatRoom/${todos.Roomname}`);
       });
 
@@ -34,13 +38,36 @@ export default function Roommenu() {
         }
         setMembers(Products_List);
       });
+
+      firebase
+      .database()
+      .ref(`Chitchatz/Rooms/${name}/Members`)
+      .on("value", (snapshot) => {
+        const todos = snapshot.val();
+        const Products_List = [];
+
+        for (let id in todos) {
+          Products_List.push({ ...todos[id] });
+        }
+        setData(Products_List);
+      });
+
+
+
   }, [name]);
   function Goback(){
     history.push(`/`);
   }
 
   function Friends(){
+    var modal = document.getElementById("join");
+    modal.style.display = "block";
     
+  }
+
+  function onclose() {
+    var mode = document.getElementById("join");
+    mode.style.display = "none";
   }
 
 
@@ -79,6 +106,44 @@ export default function Roommenu() {
         <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 24 24" fill="none" stroke="gray" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="1"></circle><circle cx="12" cy="5" r="1"></circle><circle cx="12" cy="19" r="1"></circle></svg>
         </div>
       </div>
+
+
+      <div id="join" class="modal">
+        <div class="modal-content" id="mem">
+          <span onClick={onclose} class="close">
+            {" "}
+            &times;
+          </span>
+          <h1>Group Members</h1>
+
+            {Data ? Data.map((member, index) => 
+            <>
+            <div className="Admin">
+
+          
+                {Admin===`${member.Name}` ? ( <h1>Admin</h1> ) : ( "")}
+            <div className="Memberblock">
+            
+            <div className="imgdiv">
+                <img src={member.DPLink} alt={member.Name}  />
+                </div>
+                <div className="mem_info">
+                
+            <h6> {member.Name}  </h6>
+            <h2>{member.Phone}</h2>
+                </div>
+            </div>
+            </div>
+       </>
+            ) : " "}
+
+        </div>
+      </div>
+
+
+
+
+
 
     </div>
   );
