@@ -15,7 +15,7 @@ function App() {
         <Switch>
           <Route exact path="/" component={Home} />
           {/* <Route exact path="/Chat" component={Chat} /> */}
-          <Route exact path='/isChatRoom/:name' component={Chat} />
+          <Route exact path='/ChatRoomauth/:name' component={Chat} />
           <Route exact path='/ChatRoom/:name' component={Room} />
 
           <Route exact path="/Auth" component={Auth} />

@@ -25,7 +25,7 @@ export default function Roommenu() {
         setdata(todos);
         setAdmin(todos.Name);
 
-        setSharelink(`http://localhost:3000/isChatRoom/${todos.Roomname}`);
+        setSharelink(`http://localhost:3000/ChatRoomauth/${todos.Roomname}`);
       });
 
     firebase
@@ -69,10 +69,11 @@ export default function Roommenu() {
 
   function Share(){
     const shareData = {
-      title: 'MDN',
-      text: 'Learn web development on MDN!',
-      url: 'https://developer.mozilla.org'
+      title: 'Chitchatz',
+      text: `Join Chat Room⚡ on Chitchatz , just Register or Login & Enter Password ---------🔑:- ${data.Password}--------- Click on the Below Link👇`,
+      url: `https://chitchatz.netlify.app/ChatRoomauth/${data.Roomname}`
     }
+    // console.log(shareData);
     navigator.share(shareData)
   }
   function onclose() {
