@@ -5,12 +5,14 @@ import { useCounter } from "../Context/CartContext";
 import firebase from "../DB/firebasedb";
 import Chatroom from "../Components/Chatrooms/Chatroom";
 import Block from "../Components/Block/Block";
+import Dp from "../Skeleton/Dp";
 
 export default function Home() {
   let history = useHistory();
   const { UserId, UserName } = useCounter();
   const [Img, setImg] = useState("");
   const [Phone, setPhone] = useState("");
+  const [isload, setisload] = useState(true)
   const [Roomlist, setRoomlist] = useState([]);
  
   useEffect(() => {
@@ -29,6 +31,7 @@ export default function Home() {
       setImg(Products_List[0].DPLink);
       console.log(Products_List[0].DPLink);
       setPhone(Products_List[0].Phone);
+      setisload(false)
 
       const Room_List = [];
       const Rooms = Products_List[1];
@@ -118,7 +121,11 @@ export default function Home() {
 
       <div className="main">
         <div className="left">
-          <div className="profile">
+
+{isload ? (
+  <Dp />
+) : ( 
+  <div className="profile">
             <div className="imgdiv">
               <img src={Img} alt={UserName} />
             </div>
@@ -129,6 +136,11 @@ export default function Home() {
             </div>
             <hr />
           </div>
+)}
+         
+
+          
+
 
           <div className="Add" onClick={Add}>
 
@@ -151,7 +163,16 @@ export default function Home() {
               </svg>
               _Your Chat-rooms{" "}
             </h2>
+        
             <hr />
+
+            
+{isload ? (
+  <lottie-player src="https://assets10.lottiefiles.com/packages/lf20_8y9IYf.json"  background="transparent"  speed="1" style={{ height: "400px"}}  loop  autoplay />
+) : (
+""
+)}
+
             <div className="Rooms">
               {Roomlist
                 ? Roomlist.map((room, index) => (
