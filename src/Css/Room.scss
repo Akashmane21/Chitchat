@@ -1,12 +1,13 @@
 .room{
     background-color: #0d1117;
-    height: 100vh;
+    // height: 100vh;
 
     .chatblock{
         display: flex;
 
         .Chatbox{
-            height: 80vh;
+            height: 85vh;
+            border-radius: 20px;
 
             background-color: #1b1f23;
             
@@ -25,39 +26,41 @@
                 margin-top: auto;
                 input{
                     
-                    font-size: 20px;
+                    font-size: 18px;
                     border: 0px;
                     padding: 5px 10px;
                     outline: 0px;
-                    color: rgb(0, 0, 0);
+                    color: rgb(255, 0, 0);
                     border-radius: 20px;
                     margin: 10px;
-                    background-color: gray;
+                    background-color: rgb(216, 216, 216);
                     
                     &::placeholder{
-                        color: black;
+                        color: rgb(126, 126, 126);
+                        font-size: 15px;
                     }
 
                      
                 }
                 button{
-                    // height: 40px;
-                    // width: 40px;
-                    // background-color: orangered;
                     padding: 6px 0px;
-                    background-color: gray;
+                    background-color: rgba(128, 128, 128, 0);
                     border: 0pc;
                     outline: 0px;
-                    // border-radius: 50%;
 
+                    i{
+                        font-size: 25px;
+                        color: rgb(0, 0, 0);
+                    }
                 }
             }
 
         }
 
         .Chatmembers{
-            width: 30%;
+           
             padding: 20px;
+            height: 80vh;
             overflow-y: scroll;
          
             h1{
@@ -130,10 +133,14 @@
 @media (max-width: 765px) {
     .Chatmembers{
         display: none;
+        // width: 100%;
+
     }
     .Chatbox{
 
         width: 100%;
+        display: none;
+
         margin: 0px;
     }
     .send{
@@ -141,6 +148,11 @@
         input{
             width:80%;
         }
+    }
+
+    .chatblock{
+        display: none;
+
     }
 
 }
@@ -156,6 +168,12 @@
         input{
             width: 90%;
         }
+    }
+
+    .Chatmembers{
+        // display: none;
+        width: 30%;
+
     }
 
 }

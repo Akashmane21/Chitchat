@@ -18,9 +18,9 @@
 
 .Message_box{
     color: white;
-    width: 90%;
     padding: 10px;
     margin-bottom: 20px;
+    box-shadow: 0px 10px 20px -10px black;
     
     h1{
         font-size: 15px;
@@ -61,7 +61,7 @@
 
 @media (max-width: 765px) {
     .Message_box{
-        width: 80%;
+        width: 90%;
     }
 
 }
@@ -69,7 +69,7 @@
 @media (min-width: 765px) {
 
     .Message_box{
-        width: 90%;
+        width: 50%;
     }
 
 }

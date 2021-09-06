@@ -143,7 +143,8 @@ export default function Room() {
             <input id="msg" onKeyUp={handle} placeholder="Enter the Message here" onChange={e => setMessage(e.target.value)} />
           
             <button onClick={Send}>
-            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 17l5-5-5-5M6 17l5-5-5-5"/></svg>
+            <i class="fas fa-paper-plane"></i>
+            {/* <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 17l5-5-5-5M6 17l5-5-5-5"/></svg> */}
             </button>
         </div>
         </div>
