@@ -3,7 +3,7 @@
   "name": "Chitchatz App",
   "icons": [
     {
-      "src": "/images/chatz.png",
+      "src": "https://static.vecteezy.com/system/resources/thumbnails/002/135/986/small/chat-wing-logo-design-illustration-free-vector.jpg",
       "sizes": "64x64 32x32 24x24 16x16",
       "type": "image/x-icon"
     }
