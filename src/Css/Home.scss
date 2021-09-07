@@ -1,4 +1,20 @@
-.profile{
+.profile3{
+  .imgdiv{
+    border-radius: 50%;
+    height: 200px;
+    width: 200px;
+    overflow: hidden;
+
+    img{
+        height: 200px;
+        width: auto;
+
+    }
+}
+}
+
+
+.profile {
     display: flex;
     color: rgb(240, 240, 240);
     .imgdiv{
@@ -121,7 +137,7 @@ background-size: 98%;
   margin-left: auto;
   position: relative;
   display: flex;
-  // left: 30px;
+  left: 40px;
   button{
     border-radius: 10px;
     background-color: rgb(221, 221, 221);
@@ -220,8 +236,25 @@ h1{
 }
 
 
-
-
+.dropdown{
+  ul{
+    li{
+      a{
+        font-size: 20px;
+        i{
+          color: rgb(148, 148, 148);
+          margin-left: 10px;
+        }
+      }
+    }
+  }
+}
+.logout{
+  i{
+    color: rgb(255, 0, 0);
+    margin-left: 10px;
+  }
+}
 
 
 

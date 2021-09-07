@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from "react";
 import "../../Css/Home.scss";
 import "./Create.scss";
-// import { useHistory } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import firebase from "../../DB/firebasedb";
 import { useCounter } from "../../Context/CartContext";
 
 export default function Create() {
-  // let history = useHistory();
+  let history = useHistory();
   const { UserId } = useCounter();
 
   var  roomimgurl ;
@@ -170,6 +170,21 @@ console.log(files);
           .push({
            ...userinfo
           })
+
+          const Msg = {
+            ...userinfo,
+            Message : "Hello Everyone 👋",
+            Time:strTime,
+            date:fulldate
+          }
+      
+          firebase
+          .database()
+          .ref(`Chitchatz/Rooms/${name}/Messages`)
+          .push(Msg);
+
+          history.push("/")
+    
     
 
 
@@ -208,7 +223,9 @@ console.log(files);
           .push({
            ...userinfo
           })
-    
+       
+      
+       
 
       } else {
 setisuser(true)
@@ -364,16 +381,7 @@ setisuser(true)
         </div>
       </div>
 
-      <div id="join" class="modal">
-        <div class="modal-content">
-          <span onClick={onclose} class="close">
-            {" "}
-            &times;
-          </span>
-          <h1>Join</h1>
-
-        </div>
-      </div>
+     
     </div>
   );
 }

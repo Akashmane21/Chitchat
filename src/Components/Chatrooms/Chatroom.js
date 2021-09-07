@@ -17,9 +17,11 @@ export default function Chatroom({Rooms}) {
     useEffect(() => {
         firebase.database()
         .ref(`Chitchatz/Rooms/${Rooms.RoomName}/Admin`)
-        .on("value", (snapshot) => {
+        .on("value", ( snapshot) => {
           const todos = snapshot.val(); 
+          console.log(Rooms.RoomName , todos);
           setRoom(todos)
+
          
         });
         firebase.database()
@@ -75,7 +77,7 @@ export default function Chatroom({Rooms}) {
         const lastmsg = Products_List.reverse()
         lastmsg.length=1
         console.log(lastmsg);
-        setLastmsg(lastmsg[0])
+        setLastmsg(lastmsg)
 
       });
 
@@ -128,13 +130,27 @@ export default function Chatroom({Rooms}) {
 
             <div className="Chat_info">
                 <h5>{Room.Roomname}</h5>
-                  <h6>{Lastmsg.Message}</h6>
+
+                {Lastmsg ?   Lastmsg.map((member, index) => (
+                  <>
+                  <h6>{member.Message}</h6>
+
+
+                    </>
+                  ))
+                : " "}
 
             </div>
             <div className="date">
-                <h6>{Lastmsg.date}</h6>
-                <h6>{Lastmsg.Time}</h6>
+            {Lastmsg ?   Lastmsg.map((member, index) => (
+                  <>
+                  <h6>{member.date}</h6>
+                <h6>{member.Time}</h6>
 
+                    </>
+                  ))
+                : " "}
+             
             </div>
             </div>
         </div>

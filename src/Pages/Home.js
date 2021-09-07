@@ -42,6 +42,7 @@ export default function Home() {
       const reversed = Room_List.reverse();
 
       setRoomlist(reversed);
+      console.log(reversed);
     });
 
     //   eslint-disable-next-line
@@ -57,6 +58,17 @@ export default function Home() {
 
   }
 
+  function Profile() {
+    var modal = document.getElementById("profile");
+    modal.style.display = "block";
+  }
+
+  function onclose() {
+    var modal = document.getElementById("profile");
+  
+    modal.style.display = "none";
+  }
+
   return (
     <div>
       <div className="menu">
@@ -70,30 +82,20 @@ export default function Home() {
 
                 </button>
                 <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                
                 {/* eslint-disable-next-line */}
-                  <li><a class="dropdown-item" href="#">Create Room</a></li>
+                <li><a class="dropdown-item" href="#" onClick={Profile}>Profile<i class="fas fa-user"></i></a></li>
+                 {/* eslint-disable-next-line */}
+                  <li><a class="dropdown-item" href="#" onClick={Add}>Create Room <i class="fas fa-comment-medical"></i></a></li>
                                   {/* eslint-disable-next-line */}
-                  <li><a class="dropdown-item" href="#">Join Room</a></li>
+                  <li><a class="dropdown-item" href="#" onClick={Add}>Join Room <i class="fas fa-comments"></i></a></li>
                                   {/* eslint-disable-next-line */}
-                  <li><a class="dropdown-item" href="#">Something else here</a></li>
+                  <li><a class="dropdown-item  logout" href="#" onClick={logout}>Logout  
+                  <i Style={{color:"red"}} class="fas fa-sign-out-alt"></i>     </a></li>
                 </ul>
               </div>
 
-          <button onClick={logout}>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="22"
-              height="22"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="red"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            >
-              <path d="M15 3h6v18h-6M10 17l5-5-5-5M13.8 12H3" />
-            </svg>
-          </button>
+       
 
         </div>
 
@@ -194,6 +196,27 @@ export default function Home() {
 
 
 
+
+      <div id="profile" class="modal">
+        <div class="modal-content">
+          <span onClick={onclose} class="close">
+            {" "}
+            &times;
+          </span>
+          <h1>Profile</h1>
+          <div className="profile3">
+            <div className="imgdiv">
+              <img src={Img} alt={UserName} />
+            </div>
+
+            <div className="info">
+              <h4>{UserName}</h4>
+              <h4>{Phone}</h4>
+            </div>
+            <hr />
+          </div>
+        </div>
+      </div>
 
     
 
