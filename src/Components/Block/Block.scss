@@ -5,3 +5,23 @@
         text-align: center;
     }
 }
+
+.header{
+    padding: 20px;
+    &:hover{
+        cursor: pointer;
+
+    }
+    h3{
+        color: gray;
+        text-transform: uppercase;
+        padding-left: 20px;
+
+        i{
+            color: orangered;
+            margin-right: 20px;
+        }
+    }
+
+
+}
