@@ -78,7 +78,6 @@ export default function Room() {
   function STB(){
     var myDiv = document.getElementById("msgs");
     myDiv.scrollTop = myDiv.scrollHeight;
-    console.log("called");
 
 
   }
@@ -106,7 +105,6 @@ export default function Room() {
       date:fulldate
     }
 
-    console.log(Msg);
     firebase
     .database()
     .ref(`Chitchatz/Rooms/${name}/Messages`)

@@ -247,18 +247,14 @@ setisuser(true)
 
   function onclose() {
     var modal = document.getElementById("myModal");
-    var mode = document.getElementById("join");
     modal.style.display = "none";
-    mode.style.display = "none";
   }
 
   window.onclick = function (event) {
     // eslint-disable-next-line
     if (event.target == modal) {
       var modal = document.getElementById("myModal");
-      var mod = document.getElementById("join");
       modal.style.display = "none";
-      mod.style.display = "none";
     }
   };
 

@@ -9,7 +9,7 @@ import Zoom from 'react-reveal/Zoom';
 import { useCounter } from "../../Context/CartContext";
 
 export default function Roommenu() {
-  const { UserId } = useCounter();
+  const { UserId ,UserName  } = useCounter();
 
   let history = useHistory();
   const [data, setdata] = useState([]);
@@ -18,6 +18,7 @@ export default function Roommenu() {
   const [Admin, setAdmin] = useState('')
   const [Data, setData] = useState([])
   const [Members, setMembers] = useState([]);
+  const [deluserid, setdeluserid] = useState("")
   const { name } = useParams();
 
   useEffect(() => {
@@ -53,9 +54,21 @@ export default function Roommenu() {
         const Products_List = [];
 
         for (let id in todos) {
-          Products_List.push({ ...todos[id] });
+          Products_List.push({id, ...todos[id] });
         }
         setData(Products_List);
+        console.log('====================================');
+
+        for(var i=0 ; i<Products_List.length;i++){
+          if(Products_List[i].Name===UserName){
+            setdeluserid(Products_List[i].id)
+
+
+          }
+  
+        }
+        console.log('====================================');
+
       });
 
 
@@ -101,6 +114,13 @@ function LeaveRoom(){
   .database()
   .ref(`Chitchatz/Users/${UserId}/Rooms`)
   .child(id)
+  .remove();
+
+ 
+ firebase
+ .database()
+ .ref(`Chitchatz/Rooms/${name}/Members`)
+ .child(deluserid)
  .remove();
 
  history.push(`/`);
