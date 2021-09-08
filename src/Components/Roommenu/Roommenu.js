@@ -72,7 +72,7 @@ export default function Roommenu() {
       });
 
 
-
+// eslint-disable-next-line
   }, [name]);
   function Goback(){
     history.push(`/`);
