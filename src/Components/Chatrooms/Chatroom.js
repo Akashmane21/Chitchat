@@ -111,15 +111,21 @@ export default function Chatroom({Rooms}) {
             <h6>Members</h6>
             <div className="memberno">
 
-          
+            <div className="memberss">
+
                 {Members
                 ? Members.map((member, index) => (
                   <>
-                    <img src={member.DPLink} alt=" " />
+<div className="memimg">
+
+                    <img  src={member.DPLink} alt=" " />
+</div>
 
                     </>
                   ))
                 : " "}
+                </div>
+
                 <div className="mem">
 
                 <h6>{moremem}</h6>

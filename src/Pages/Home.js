@@ -72,8 +72,8 @@ export default function Home() {
   return (
     <div>
       <div className="menu">
-        <h1>ChitChatz_
-        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="orangered" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+        <h1>ChitChatz
+        {/* <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="orangered" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg> */}
         </h1>
         <div className="log">
         <div class="dropdown">
@@ -84,14 +84,17 @@ export default function Home() {
                 <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
                 
                 {/* eslint-disable-next-line */}
-                <li><a class="dropdown-item" href="#" onClick={Profile}>Profile<i class="fas fa-user"></i></a></li>
+                <li><i class="fas fa-user"></i><a class="dropdown-item" href="#" onClick={Profile}>Profile</a></li>
                  {/* eslint-disable-next-line */}
-                  <li><a class="dropdown-item" href="#" onClick={Add}>Create Room <i class="fas fa-comment-medical"></i></a></li>
+                  <li><i class="fas fa-comment-medical"></i><a class="dropdown-item" href="#" onClick={Add}>Create Room </a></li>
                                   {/* eslint-disable-next-line */}
-                  <li><a class="dropdown-item" href="#" onClick={Add}>Join Room <i class="fas fa-comments"></i></a></li>
+                  <li><i class="fas fa-comments"></i><a class="dropdown-item" href="#" onClick={Add}>Join Room </a> </li>
                                   {/* eslint-disable-next-line */}
-                  <li><a class="dropdown-item  logout" href="#" onClick={logout}>Logout  
-                  <i Style={{color:"red"}} class="fas fa-sign-out-alt"></i>     </a></li>
+                  <li><i Style={{color:"red"}} class="fas fa-sign-out-alt"></i>  <a class="dropdown-item  logout" href="#" onClick={logout}>Logout  
+                     </a>
+                     
+                     
+                     </li>
                 </ul>
               </div>
 
@@ -102,14 +105,14 @@ export default function Home() {
         <div className="btns">
       
         <button onClick={logout} className="hidden">
-          Logout_
+         
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="22"
             height="22"
             viewBox="0 0 24 24"
             fill="none"
-            stroke="white"
+            stroke="orangered"
             stroke-width="2"
             stroke-linecap="round"
             stroke-linejoin="round"
@@ -125,7 +128,7 @@ export default function Home() {
         <div className="left">
 
 {isload ? (
-  <Dp />
+ ""
 ) : ( 
   <div className="profile">
             <div className="imgdiv">
@@ -154,11 +157,11 @@ export default function Home() {
             <h2>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                width="22"
-                height="22"
+                width="14"
+                height="14"
                 viewBox="0 0 24 24"
                 fill="none"
-                stroke="orangered"
+                stroke="gray"
                 stroke-width="2"
                 stroke-linecap="round"
                 stroke-linejoin="round"
@@ -172,7 +175,11 @@ export default function Home() {
 
             
 {isload ? (
-  <lottie-player src="https://assets10.lottiefiles.com/packages/lf20_8y9IYf.json"  background="transparent"  speed="1" style={{ height: "400px"}}  loop  autoplay />
+  <>
+  <Dp />
+  <Dp /> <Dp /> <Dp /> <Dp />
+  {/* <lottie-player src="https://assets10.lottiefiles.com/packages/lf20_8y9IYf.json"  background="transparent"  speed="1" style={{ height: "400px"}}  loop  autoplay /> */}
+  </>
 ) : (
 ""
 )}
