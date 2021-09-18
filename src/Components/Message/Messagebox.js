@@ -8,7 +8,16 @@ export default function Messagebox({Msg}) {
 
     return (
         <Fade bottom>
-<div className="fullmsg">
+<div className={UserName===`${Msg.Name}` ?  "right" :  "fullmsg" }>
+
+<div className={UserName===`${Msg.Name}` ?  "none" :  "Admin" }>
+                    <div className="imgdiv">
+                        <img src={Msg.DPLink} alt="" />
+                    </div>
+                  
+      </div>
+
+      
         <div className={UserName===`${Msg.Name}` ?  "Message_box isYou" :  "sender Message_box" }>
                
 
@@ -17,17 +26,17 @@ export default function Messagebox({Msg}) {
         </div>
 
 
-        <div className="Admin">
+        <div className={UserName===`${Msg.Name}` ?  "Admin" :  "none" }>
                     <div className="imgdiv">
                         <img src={Msg.DPLink} alt="" />
                     </div>
                   
-                </div>
+      </div>
 
 
                 </div>
 
-                <div className="timestamp">
+                <div className={UserName===`${Msg.Name}` ?  "timestamp" :  "other" }>
 
                 {UserName===`${Msg.Name}` ?  <h2>You</h2> :  <h2>{Msg.Name}</h2> }
                     <h6>{Msg.Time}</h6>

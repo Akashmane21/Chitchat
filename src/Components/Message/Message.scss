@@ -6,22 +6,26 @@
     border-bottom-right-radius:0px ;
     background-color: #0086ff;
 
+  
 
 }
 .sender{
-    border-radius: 20px;
+    color: rgb(0, 0, 0);
 
-    border-top-left-radius:0px ;
-    background-color: rgba(0, 176, 230, 0.884);
+    border-radius: 10px;
+
+    border-bottom-left-radius:0px ;
+    background-color: rgba(204, 204, 204, 0.884);
 
 
 }
 
+
+
 .Message_box{
-    color: rgb(255, 255, 255);
     padding: 10px;
     margin-bottom: 20px;
-    box-shadow: 0px 10px 20px -10px rgb(192, 189, 189);
+    // box-shadow: 0px 10px 20px -10px rgb(192, 189, 189);
     overflow: hidden;
     
     h1{
@@ -41,25 +45,65 @@
 
         .fullmsg{
             display: flex;
-            align-items: flex-end;
+            justify-content: flex-start;
+            
+
+            
+
         }
-    
 
-.timestamp{
+        .none{
+            display: none;
+        }
+    .right{
     display: flex;
-    align-items: center;
-    justify-content: flex-end;
-
-    h2{
-        font-size: 15px;
-        padding-right: 10px;
-
+    background-color: #ffffff;
+    padding: 0px;
     }
-    h6{
-        color: gray;
-        font-size: 10px;
-    }
-}
+
+        .timestamp{
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            position: relative;
+            top: -15px;
+                left: -60px;
+            h2{
+                font-size: 12px;
+                color: gray;
+
+                padding-right: 10px;
+        
+            }
+            h6{
+                color: gray;
+                font-size: 12px;
+            }
+        }
+
+        .other{
+           
+                display: flex;
+                align-items: center;
+                position: relative;
+                top: -15px;
+                left: 60px;
+              
+            
+                h2{
+                    font-size: 12px;
+                    color: gray;
+    
+                    padding-right: 10px;
+            
+                }
+                h6{
+                    color: gray;
+                    font-size: 12px;
+                }
+            
+
+        }
 @media (max-width: 765px) {
     .Message_box{
         width: 60%;
@@ -96,4 +140,12 @@
         }
     }
 
+}
+
+
+.room .chatblock .Chatbox .msgs {
+    height: 90%;
+    padding: 10px;
+    overflow: hidden;
+    padding-bottom: 150px;
 }
