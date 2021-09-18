@@ -16,7 +16,7 @@
 
 .profile {
     display: flex;
-    color: rgb(240, 240, 240);
+    color: rgb(0, 0, 0);
     .imgdiv{
         border-radius: 50%;
         height: 70px;
@@ -31,7 +31,7 @@
     }
     
   
-    background-color: #30363d;
+    background-color: #65d10c;
     // background-color: aliceblue;
    padding: 10px;
    justify-content: space-between;
@@ -173,6 +173,8 @@ background-size: 98%;
   }
     .left {
     // display: none;
+    background-color: rgb(255, 255, 255);
+  
     margin: 0px;
     height: 95vh;
     overflow-y: scroll;
@@ -216,7 +218,7 @@ background-size: 98%;
     }
   }
   .left {
-    width: 25%;
+    width: 30%;
     height: 100vh;
     overflow-y: scroll;
 
@@ -224,7 +226,7 @@ background-size: 98%;
   }
 
   .right {
-    width: 75%;
+    width: 70%;
     .box{
       margin: 20%;
     }

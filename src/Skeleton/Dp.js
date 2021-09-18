@@ -3,7 +3,7 @@ import './Skelrton.scss'
 export default function Dp() {
   return (
     <div className="skeleton">
-     <div className="profile">
+     <div className="profilee">
             <div className="imgdiv">
               
             </div>
