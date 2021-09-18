@@ -32,7 +32,11 @@
 }
 // For Mobile View
 @media (max-width: 765px) {
-
+    .isChat{
+        display: flex;
+        flex-direction: column;
+      justify-content: center;
+    }
    
 }
 

@@ -1,9 +1,10 @@
 .isYou{
     margin-left: auto;
-    border-radius: 20px;
+    border-radius: 10px;
+    color: rgb(255, 255, 255);
 
     border-bottom-right-radius:0px ;
-    background-color: rgba(153, 0, 255, 0.349);
+    background-color: #0086ff;
 
 
 }
@@ -11,16 +12,16 @@
     border-radius: 20px;
 
     border-top-left-radius:0px ;
-    background-color: rgba(2, 238, 255, 0.349);
+    background-color: rgba(0, 176, 230, 0.884);
 
 
 }
 
 .Message_box{
-    color: white;
+    color: rgb(255, 255, 255);
     padding: 10px;
     margin-bottom: 20px;
-    box-shadow: 0px 10px 20px -10px black;
+    box-shadow: 0px 10px 20px -10px rgb(192, 189, 189);
     overflow: hidden;
     
     h1{
@@ -34,43 +35,65 @@
         text-align: end;
     }
 
-        .Admin{
-            display: flex;
-            align-items: center;
-            h2{
-                font-size: 15px;
-                text-transform: uppercase;
-            }
-            .imgdiv{
-                border-radius: 50%;
-                display: flex;
-                justify-content: center;
-                height: 40px;
-                width: 45px;
-                margin: 10px 0px;
-                margin-right: 10px;
-                overflow: hidden;
-                img{
-                    height: 40px;
-                    width: auto;
-                }
-            }
+      
         }
-}
+
+
+        .fullmsg{
+            display: flex;
+            align-items: flex-end;
+        }
     
 
+.timestamp{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
 
+    h2{
+        font-size: 15px;
+        padding-right: 10px;
+
+    }
+    h6{
+        color: gray;
+        font-size: 10px;
+    }
+}
 @media (max-width: 765px) {
     .Message_box{
-        width: 90%;
+        width: 60%;
     }
-
+   
 }
 
 @media (min-width: 765px) {
 
     .Message_box{
         width: 50%;
+    }
+
+   
+
+}
+
+.Admin{
+    // display: flex;
+    align-items: center;
+   
+    .imgdiv{
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        height: 40px;
+        width: 45px;
+        margin: 10px 0px;
+        margin-right: 10px;
+        overflow: hidden;
+        img{
+            height: 40px;
+            width: auto;
+        }
     }
 
 }
