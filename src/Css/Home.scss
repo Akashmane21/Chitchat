@@ -49,8 +49,8 @@
     }
   }
 .menu{
-    background-color: #0d1117;
-    background-color: white;
+    background-color: #17273d;
+    // background-color: white;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -58,7 +58,7 @@
  
   
     h1{
-        color: rgba(255, 0, 0, 0.993);
+        color: rgba(255, 255, 255, 0.993);
         // text-transform: uppercase;
         font-weight: 600;
         letter-spacing: 2px;
@@ -72,7 +72,7 @@
 
     }
     button{
-       background-color: rgb(255, 255, 255);
+       background-color: rgba(228, 206, 206, 0);
        border: 0px;
        padding: 10px 20px;
        margin: 10px;
@@ -279,7 +279,12 @@ h1{
 
 
 
-
+.log button {
+  border-radius: 10px;
+  background-color: #17273d;
+  position: relative;
+  left: 30px;
+}
 
 
 
